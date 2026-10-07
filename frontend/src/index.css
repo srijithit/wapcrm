@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --bg: #F8F9FC;
+    --bg-secondary: #FFFFFF;
+    --surface: #FFFFFF;
+    --surface-hover: #F8FAFC;
+    --border: #EAECF0;
+    --border-subtle: #F2F4F7;
+    --border-strong: #D0D5DD;
+    --text: #101828;
+    --text-muted: #475467;
+    --text-dim: #98A2B3;
+    
+    --primary-purple: #0284C7;
+    --primary-purple-hover: #0369A1;
+    --purple-light: #F0F9FF;
+    --purple-border: #BAE6FD;
+    --green-accent: #16A34A;
+  }
+
+  html, body {
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #F8F9FC;
+    color: #101828;
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+
+  @media screen and (max-width: 768px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+
+  h1, h2, h3, .display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom shadow styles matching screenshot */
+.sendiee-card {
+  background: #FFFFFF;
+  border: 1px solid #EAECF0;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.05), 0 1px 2px rgba(16, 24, 40, 0.03);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sendiee-banner-purple {
+  background: linear-gradient(90deg, #F0F9FF 0%, #F8FAFC 100%);
+  border: 1px solid #BAE6FD;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.sendiee-banner-claim {
+  background: linear-gradient(90deg, #F0F9FF 0%, #E0F2FE 100%);
+  border: 1px solid #BAE6FD;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Interactive Hover Animation Classes matching user's exact screenshot */
+.hover-item-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-item-card:hover {
+  border-color: #0284C7 !important;
+  background-color: #F0F9FF !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.12);
+}
+
+.hover-item-card:hover .arrow-icon {
+  color: #0284C7 !important;
+  transform: translateX(3px);
+}
+
+.hover-item-card:hover .icon-box {
+  background-color: #E0F2FE !important;
+  color: #0369A1 !important;
+}
+
+.hover-lift {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16, 24, 40, 0.08);
+  border-color: #D0D5DD;
+}
+
+.grid-cols-25 {
+  grid-template-columns: 44px repeat(24, minmax(0, 1fr));
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
